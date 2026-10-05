@@ -1,0 +1,117 @@
+/* =====================================================================
+   HOME
+   ===================================================================== */
+.home {
+  padding: 3.5rem 1.25rem 3rem;
+  background: linear-gradient(var(--cor-verde), var(--cor-azul) 90rem);
+  color: var(--cor-branco);
+}
+
+.home__secao {
+  max-width: 51rem;
+  margin: 0 auto 3.5rem;
+}
+
+.home__titulo {
+  margin: 0 0 2rem;
+  font-family: var(--fonte-titulo);
+  font-size: 2.05rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.home__texto {
+  max-width: 45rem;
+  margin-inline: auto;
+}
+
+/* ---- Estrutura do curso (ícones) ----------------------------------- */
+.estrutura {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem 4.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.estrutura li {
+  width: 9rem;
+}
+
+.estrutura .bi {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 5.5rem;
+  line-height: 1;
+  color: var(--cor-rosa);
+}
+
+/* ---- Cards dos módulos --------------------------------------------- */
+.modulos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem 2.75rem;
+  max-width: 51.5rem; /* 3 cards por linha */
+  margin: 0 auto;
+}
+
+.modulo-card {
+  display: flex;
+  flex-direction: column;
+  width: 15.25rem;
+  font-size: 0.8125rem;
+  line-height: 1.3;
+  color: #f7f7f7;
+}
+
+.modulo-card__topo {
+  padding: 0.9rem 1.25rem 1rem;
+  background: var(--cor-verde);
+}
+
+.modulo-card__topo h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.modulo-card__topo p {
+  margin: 0;
+  font-weight: 700;
+}
+
+.modulo-card__lista {
+  flex: 1;
+  margin: 0 1px;
+  padding: 1.25rem 1.25rem 0.5rem;
+  border: 1px dashed currentColor;
+  border-top: 0;
+  list-style: none;
+}
+
+.modulo-card__lista li {
+  margin-bottom: 1rem;
+}
+
+.modulo-card__lista :is(a, strong) {
+  display: block;
+  font-weight: 700;
+  color: inherit;
+  text-decoration: underline;
+}
+
+.modulo-card__lista span {
+  display: block;
+}
+
+.home .navegacao {
+  margin-top: 3rem;
+}

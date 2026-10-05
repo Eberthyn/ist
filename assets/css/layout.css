@@ -1,0 +1,363 @@
+/* =====================================================================
+   LAYOUT — topo, banner, menu, área de conteúdo, faixa e rodapé
+   ===================================================================== */
+
+/* ---- Topo --------------------------------------------------------- */
+.topo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: var(--topo-altura);
+  padding: 0 1.25rem;
+  background: var(--cor-azul-escuro);
+  color: var(--cor-branco);
+}
+
+.topo__logo img {
+  display: block;
+  height: 2.75rem;
+  width: auto;
+}
+
+.topo__links {
+  display: flex;
+  gap: 1.25rem;
+  margin-left: auto;
+}
+
+.topo__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: inherit;
+  text-decoration: none;
+}
+
+.topo__link:hover,
+.topo__link[aria-current="page"] {
+  color: var(--cor-verde-claro);
+}
+
+.topo__link .bi {
+  font-size: 1.15rem;
+}
+
+.topo__menu {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 1.75rem;
+  line-height: 1;
+  color: inherit;
+}
+
+/* ---- Banner ------------------------------------------------------- */
+.banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  min-height: 21.5rem;
+  padding: 2rem 1.25rem 1.25rem;
+  overflow: hidden;
+  background: var(--cor-azul);
+  color: var(--cor-branco);
+  text-align: center;
+}
+
+.banner__arte {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: auto;
+  max-width: none;
+  pointer-events: none;
+}
+
+.banner__arte--esq { left: 0; }
+.banner__arte--dir { right: 0; }
+
+.banner__texto {
+  position: relative;
+  margin: auto 0;
+}
+
+.banner__titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  line-height: 1.15;
+}
+
+/* Filetes acima e abaixo do título */
+.banner__titulo::before,
+.banner__titulo::after {
+  content: "";
+  width: 7rem;
+  border-top: 1px solid currentColor;
+}
+
+.banner__titulo::before { margin-bottom: 1.4rem; }
+.banner__titulo::after { margin-top: 1.4rem; }
+
+.banner__chamada {
+  margin-bottom: 0.4rem;
+  font-size: clamp(1.35rem, 0.9rem + 1.9vw, 2.125rem);
+  font-weight: 700;
+}
+
+.banner__destaque {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.9rem, 1.1rem + 3vw, 3rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--cor-verde-claro);
+}
+
+.banner__destaque:last-child {
+  color: var(--cor-rosa);
+}
+
+.banner__modulo {
+  position: relative;
+  margin: 0;
+  font-size: clamp(1rem, 0.8rem + 0.8vw, 1.4rem);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/* Versão da home */
+.banner--grande {
+  min-height: 34rem;
+}
+
+.banner--grande .banner__arte {
+  height: min(85%, 26vw);
+}
+
+.banner--grande .banner__arte--dir { top: auto; bottom: 0; }
+
+.banner--grande .banner__chamada {
+  font-size: clamp(1.5rem, 0.9rem + 2.6vw, 2.75rem);
+}
+
+.banner--grande .banner__destaque {
+  font-size: clamp(2rem, 1rem + 3.6vw, 3.5rem);
+}
+
+.banner__selo {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding: 0.05rem 1rem;
+  background: var(--cor-rosa);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.banner__seta {
+  position: relative;
+  font-size: 2rem;
+  line-height: 1;
+  color: inherit;
+}
+
+/* Em telas menores a arte vira detalhe de fundo */
+@media (max-width: 991.98px) {
+  .banner__arte { opacity: 0.25; }
+}
+
+@media (max-width: 575.98px) {
+  .banner { min-height: 16rem; }
+  .banner--grande { min-height: 24rem; }
+}
+
+/* ---- Estrutura menu + conteúdo ------------------------------------ */
+.pagina {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 992px) {
+  .pagina {
+    grid-template-columns: var(--menu-largura) minmax(0, 1fr);
+  }
+}
+
+.pagina__principal {
+  display: flex;
+  flex-direction: column;
+  background: var(--pagina-fundo);
+}
+
+.conteudo {
+  flex: 1;
+  width: 100%;
+  max-width: calc(var(--conteudo-largura) + 2.5rem);
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 3.5rem;
+}
+
+/* Faixa ilustrada no fim do conteúdo */
+.faixa {
+  height: 7.5rem;
+  background: var(--faixa-imagem) repeat-x center / auto 100%;
+}
+
+/* ---- Menu lateral -------------------------------------------------- */
+curso-menu {
+  background: var(--menu-fundo);
+}
+
+.menu {
+  --bs-offcanvas-width: 18rem;
+  --bs-offcanvas-bg: var(--menu-fundo);
+  --bs-offcanvas-color: var(--menu-texto);
+  color: var(--menu-texto);
+  font-size: 0.8125rem;
+  line-height: 1.35;
+}
+
+.menu__corpo {
+  padding: 1rem 1.25rem 2.5rem 2.25rem;
+  overflow-y: auto;
+}
+
+@media (min-width: 992px) {
+  .menu__corpo { padding-top: 3.25rem; }
+}
+
+.menu a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+.menu__home {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+}
+
+.menu__titulo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: inherit;
+}
+
+.menu__titulo .bi {
+  font-size: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.menu__titulo[aria-expanded="false"] .bi {
+  transform: rotate(180deg);
+}
+
+.menu__titulo--link {
+  display: inline-block;
+}
+
+.menu__modulo {
+  margin-bottom: 2rem;
+}
+
+/* Lista com a linha do tempo (bolinhas ligadas) */
+.menu__lista {
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu__lista li {
+  position: relative;
+  padding: 0 0 0.3rem 1.1rem;
+}
+
+.menu__lista li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.3rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+}
+
+.menu__lista li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: calc(0.25rem - 0.75px);
+  top: 0.8rem;
+  bottom: -0.3rem;
+  border-left: 1.5px solid currentColor;
+}
+
+.menu__item {
+  display: block;
+  font-weight: 500;
+}
+
+.menu__subtitulo {
+  display: block;
+}
+
+.menu__item[aria-current="page"] {
+  font-weight: 700;
+}
+
+/* Página atual: bolinha preenchida */
+.menu__lista li:has([aria-current="page"])::before {
+  background: currentColor;
+}
+
+/* Páginas ainda não publicadas */
+.menu span.menu__item,
+.menu span.menu__titulo--link {
+  opacity: 0.75;
+}
+
+/* ---- Trilha (breadcrumb) ------------------------------------------ */
+.trilha ol {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 2rem;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--pagina-link);
+}
+
+.trilha li + li::before {
+  content: ">";
+  margin: 0 0.3rem;
+}
+
+/* ---- Rodapé -------------------------------------------------------- */
+.rodape {
+  padding: 1.5rem 1.25rem;
+  background: var(--cor-branco);
+  text-align: center;
+}
+
+.rodape img {
+  width: 52rem;
+}

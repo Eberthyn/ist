@@ -1,0 +1,65 @@
+/* =====================================================================
+   TOKENS DE DESIGN
+   Para adaptar a base a outro curso, comece (e quase sempre termine) aqui.
+   ===================================================================== */
+:root {
+  /* Paleta */
+  --cor-azul: #264787;
+  --cor-azul-escuro: #143169;
+  --cor-verde: #56b6b6;
+  --cor-verde-escuro: #4998a9;
+  --cor-verde-claro: #88dbdb;
+  --cor-rosa: #e79a9c;
+  --cor-rosa-forte: #eb888a;
+  --cor-areia: #f5efef;
+  --cor-cinza: #cecece;
+  --cor-texto: #444444;
+  --cor-branco: #ffffff;
+
+  /* Tipografia */
+  --fonte-texto: "Roboto", system-ui, sans-serif;
+  --fonte-titulo: "Roboto Condensed", "Roboto", system-ui, sans-serif;
+  --texto-tamanho: 1.125rem;
+  --texto-altura: 1.7;
+
+  /* Medidas */
+  --topo-altura: 3.75rem;
+  --menu-largura: 15rem;
+  --conteudo-largura: 43rem;
+
+  /* Bootstrap segue o tema */
+  --bs-body-font-family: var(--fonte-texto);
+  --bs-body-font-size: var(--texto-tamanho);
+  --bs-body-line-height: var(--texto-altura);
+  --bs-body-color: var(--cor-texto);
+}
+
+/* ---------------------------------------------------------------------
+   Temas de página (definidos por <curso-pagina tema="...">)
+   Os componentes usam só estas variáveis, então funcionam nos dois.
+   --------------------------------------------------------------------- */
+[data-tema="aula"] {
+  --pagina-fundo: var(--cor-branco);
+  --pagina-texto: var(--cor-texto);
+  --pagina-h1: var(--cor-azul);
+  --pagina-h2: var(--cor-verde-escuro);
+  --pagina-h3: var(--cor-azul);
+  --pagina-link: var(--cor-azul);
+  --pagina-borda: var(--cor-azul);
+  --menu-fundo: var(--cor-verde-escuro);
+  --menu-texto: var(--cor-branco);
+  --faixa-imagem: url("../img/faixa-clara.png");
+}
+
+[data-tema="capa"] {
+  --pagina-fundo: linear-gradient(var(--cor-verde), var(--cor-azul) 60rem);
+  --pagina-texto: var(--cor-branco);
+  --pagina-h1: var(--cor-branco);
+  --pagina-h2: var(--cor-branco);
+  --pagina-h3: var(--cor-branco);
+  --pagina-link: var(--cor-branco);
+  --pagina-borda: var(--cor-branco);
+  --menu-fundo: var(--cor-areia);
+  --menu-texto: var(--cor-texto);
+  --faixa-imagem: url("../img/faixa-escura.png");
+}

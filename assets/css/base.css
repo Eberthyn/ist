@@ -1,0 +1,85 @@
+/* =====================================================================
+   BASE — tipografia e elementos HTML dentro da área de conteúdo
+   ===================================================================== */
+body {
+  margin: 0;
+  background: var(--cor-branco);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Componentes são blocos */
+curso-pagina, curso-topo, curso-banner, curso-menu, curso-trilha, curso-navegacao,
+curso-rodape, curso-figura, curso-destaque, curso-video, curso-modulos {
+  display: block;
+}
+
+/* Evita o "pisca" do conteúdo antes de o layout ser montado */
+curso-pagina:not([pronto]) {
+  visibility: hidden;
+}
+
+.conteudo {
+  color: var(--pagina-texto);
+}
+
+.conteudo h1,
+.conteudo h2 {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.conteudo h1 {
+  margin: 0 0 1.75rem;
+  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.25rem);
+  color: var(--pagina-h1);
+}
+
+.conteudo h2 {
+  margin: 2.25rem 0 1rem;
+  font-size: 1.5rem;
+  color: var(--pagina-h2);
+}
+
+.conteudo h3 {
+  margin: 2.25rem 0 1rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--pagina-h3);
+}
+
+/* Na capa (introdução) os títulos são maiores e brancos */
+[data-tema="capa"] .conteudo :is(h1, h2) {
+  font-size: clamp(2rem, 1.4rem + 2vw, 2.6rem);
+}
+
+[data-tema="capa"] .conteudo h2 {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.conteudo p {
+  margin: 0 0 1.5rem;
+}
+
+.conteudo a {
+  color: var(--pagina-link);
+}
+
+:focus-visible {
+  outline: 3px solid var(--cor-rosa);
+  outline-offset: 2px;
+}
+
+.pular {
+  position: absolute;
+  z-index: 2000;
+  padding: 0.5rem 1rem;
+  background: var(--cor-branco);
+  color: var(--cor-azul);
+}

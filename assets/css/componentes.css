@@ -1,0 +1,143 @@
+/* =====================================================================
+   COMPONENTES DE CONTEÚDO
+   ===================================================================== */
+
+/* ---- Botões Voltar / Avançar / Começar ----------------------------- */
+.navegacao {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 4rem;
+}
+
+.btn-voltar,
+.btn-avancar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  min-width: 12.5rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.btn-voltar {
+  --bs-btn-color: var(--pagina-link);
+  --bs-btn-border-color: var(--pagina-borda);
+  --bs-btn-hover-color: var(--cor-azul);
+  --bs-btn-hover-bg: var(--cor-areia);
+  --bs-btn-hover-border-color: var(--pagina-borda);
+  --bs-btn-disabled-color: var(--pagina-link);
+  --bs-btn-disabled-border-color: var(--pagina-borda);
+}
+
+.btn-avancar {
+  --bs-btn-color: var(--cor-branco);
+  --bs-btn-bg: var(--cor-rosa);
+  --bs-btn-border-color: var(--cor-rosa);
+  --bs-btn-hover-color: var(--cor-branco);
+  --bs-btn-hover-bg: var(--cor-rosa-forte);
+  --bs-btn-hover-border-color: var(--cor-rosa-forte);
+  --bs-btn-disabled-color: var(--cor-branco);
+  --bs-btn-disabled-bg: var(--cor-rosa);
+  --bs-btn-disabled-border-color: var(--cor-rosa);
+}
+
+/* ---- Lista com setas ------------------------------------------------
+   <ul class="lista-setas"> <li>…</li> </ul>                              */
+.lista-setas {
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.lista-setas li {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.lista-setas li::before {
+  content: "\F138"; /* bi-arrow-right */
+  position: absolute;
+  left: 0;
+  font-family: "bootstrap-icons";
+  font-weight: 700;
+  color: var(--cor-rosa);
+}
+
+/* ---- Figura --------------------------------------------------------- */
+.figura {
+  width: min(100%, 31rem);
+  margin: 2.5rem auto;
+}
+
+.figura__titulo {
+  margin-bottom: 0.4rem;
+  font-family: var(--fonte-titulo);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--cor-rosa-forte);
+}
+
+.figura__imagem {
+  display: block;
+  width: 100%;
+}
+
+.figura__imagem--vazia {
+  aspect-ratio: 5 / 3;
+  background: var(--cor-cinza);
+}
+
+.figura__fonte {
+  margin: 0.25rem 0 0 !important;
+  font-size: 0.7rem;
+  text-align: right;
+}
+
+/* ---- Destaque (leitura complementar, saiba mais…) ------------------- */
+.destaque {
+  width: min(100%, 36rem);
+  margin: 2.5rem auto;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.destaque__titulo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 !important;
+  padding: 0.5rem 1.25rem;
+  background: var(--cor-rosa);
+  font-weight: 700;
+  color: var(--cor-branco);
+}
+
+.destaque__titulo .bi {
+  font-size: 1.4rem;
+}
+
+.destaque__corpo {
+  margin: 0 0.25rem;
+  padding: 1.25rem 1rem 0.25rem;
+  border: 2px dashed var(--pagina-borda, var(--cor-branco));
+  border-top: 0;
+}
+
+/* ---- Vídeo ---------------------------------------------------------- */
+.video {
+  width: min(100%, 36.5rem);
+  margin: 2.5rem auto;
+  background: var(--cor-branco);
+}
+
+.video__vazio {
+  display: grid;
+  place-items: center;
+  font-size: 5rem;
+  color: var(--cor-cinza);
+}

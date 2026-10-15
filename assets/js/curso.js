@@ -11,6 +11,14 @@
 
   window.Curso = { raiz };
 
+  // Favicon: um arquivo só para todas as páginas
+  if (!document.querySelector('link[rel="icon"]')) {
+    const icone = document.createElement('link');
+    icone.rel = 'icon';
+    icone.href = raiz + 'assets/img/favicon.ico';
+    document.head.appendChild(icone);
+  }
+
   const arquivos = [
     'assets/vendor/bootstrap/bootstrap.bundle.min.js',
     'curso.config.js',

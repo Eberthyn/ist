@@ -307,26 +307,32 @@
   background: var(--cor-rosa-forte);
 }
 
-.carrossel__seta--esq { left: 0; }
-.carrossel__seta--dir { right: 0; }
+.carrossel__seta--esq {
+  left: 0;
+}
+.carrossel__seta--dir {
+  right: 0;
+}
 
 @media (max-width: 575.98px) {
-  .carrossel { padding: 0 2.5rem; }
+  .carrossel {
+    padding: 0 2.5rem;
+  }
 }
 
 /* ---- Cartões que viram ----------------------------------------------- */
 .cartoes {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 14rem));
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 15rem));
   justify-content: center;
   gap: 1rem;
-  max-width: 30rem; /* no máximo dois por linha, como no design */
+  max-width: 32rem; /* no máximo dois por linha, como no design */
   margin: 2rem auto 2.5rem;
 }
 
 .cartao {
   position: relative;
-  min-height: 16rem;
+  min-height: 17.5rem;
   padding: 0;
   border: 0;
   background: none;
@@ -377,11 +383,17 @@
   margin: 0;
 }
 
-.cartao--virado .cartao__frente { transform: rotateY(-180deg); }
-.cartao--virado .cartao__verso { transform: rotateY(0); }
+.cartao--virado .cartao__frente {
+  transform: rotateY(-180deg);
+}
+.cartao--virado .cartao__verso {
+  transform: rotateY(0);
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .cartao__face { transition: none; }
+  .cartao__face {
+    transition: none;
+  }
 }
 
 /* ---- Caixa (Para refletir / Você sabia?) ----------------------------- */

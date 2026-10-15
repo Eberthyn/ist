@@ -12,7 +12,7 @@
         const entrada = atual.modulo.paginas.find((p) => p.url);
         passos.push({ rotulo: `Módulo ${atual.modulo.numero}`, url: entrada && entrada.url });
       }
-      passos.push({ rotulo: atual.rotulo, url: atual.url, atual: true });
+      passos.push({ rotulo: atual.rotuloTrilha || atual.rotulo, url: atual.url, atual: true });
 
       this.innerHTML = `
         <nav class="trilha" aria-label="Você está em">

@@ -4,7 +4,7 @@
    Layout completo das páginas internas: topo, banner, menu, trilha,
    conteúdo, Voltar/Avançar e rodapé. Descobre sozinho qual página é
    (pelo endereço) e em qual módulo está.
-   tema: "capa" (fundo azul; padrão nas introduções) ou "aula" (fundo branco). */
+   tema: "capa" (fundo azul; padrão nas introduções e resumos) ou "aula" (fundo branco). */
 (function () {
   const { Componente, definir, atual, config } = window.Curso;
 
@@ -12,7 +12,7 @@
     montar() {
       const conteudo = [...this.childNodes];
       const modulo = atual && atual.modulo ? atual.modulo.numero : '';
-      const tema = this.attr('tema', atual && atual.tipo === 'intro' ? 'capa' : 'aula');
+      const tema = this.attr('tema', atual && ['intro', 'resumo'].includes(atual.tipo) ? 'capa' : 'aula');
 
       this.dataset.tema = tema;
       this.innerHTML = `

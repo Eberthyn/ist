@@ -193,6 +193,7 @@
   display: flex;
   flex-direction: column;
   background: var(--pagina-fundo);
+  container-type: inline-size; /* permite que blocos "sangrem" até a borda (ver .nota) */
 }
 
 .conteudo {

@@ -27,6 +27,18 @@
     'assets/js/componentes/destaque.js',
     'assets/js/componentes/video.js',
     'assets/js/componentes/modulos.js',
+    'assets/js/componentes/acordeao.js',
+    'assets/js/componentes/abas.js',
+    'assets/js/componentes/carrossel.js',
+    'assets/js/componentes/cartoes.js',
+    'assets/js/componentes/caixa.js',
+    'assets/js/componentes/nota.js',
+    'assets/js/componentes/saiba-mais.js',
+    'assets/js/componentes/tabela.js',
+    'assets/js/componentes/colunas.js',
+    'assets/js/componentes/termo.js',
+    'assets/js/componentes/etapas.js',
+    'assets/js/componentes/modal.js',
     // layout completo (por último: usa os anteriores)
     'assets/js/componentes/pagina.js',
   ];

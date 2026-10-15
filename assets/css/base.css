@@ -13,7 +13,9 @@ img {
 
 /* Componentes são blocos */
 curso-pagina, curso-topo, curso-banner, curso-menu, curso-trilha, curso-navegacao,
-curso-rodape, curso-figura, curso-destaque, curso-video, curso-modulos {
+curso-rodape, curso-figura, curso-destaque, curso-video, curso-modulos,
+curso-acordeao, curso-abas, curso-carrossel, curso-cartoes, curso-caixa, curso-nota,
+curso-saiba-mais, curso-tabela, curso-colunas, curso-etapas {
   display: block;
 }
 
@@ -67,8 +69,52 @@ curso-pagina:not([pronto]) {
   margin: 0 0 1.5rem;
 }
 
-.conteudo a {
-  color: var(--pagina-link);
+.conteudo a:not(.btn) {
+  color: inherit;
+  font-weight: 700;
+}
+
+/* Link ainda sem endereço: aparece como link, mas não navega */
+.conteudo a:not([href]) {
+  text-decoration: underline;
+}
+
+.conteudo ul,
+.conteudo ol {
+  margin: 0 0 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.conteudo ul ul {
+  margin: 0.25rem 0 0.5rem;
+  list-style-type: circle;
+}
+
+.conteudo li + li {
+  margin-top: 0.15rem;
+}
+
+/* Pergunta em destaque no meio do texto */
+.conteudo .pergunta {
+  margin: 2rem 0 1.5rem;
+  font-weight: 700;
+  font-style: italic;
+  text-align: center;
+  color: var(--pagina-h3);
+}
+
+/* Nota de rodapé de um bloco (ex.: "(*) Para amostras…") */
+.conteudo .nota-rodape {
+  width: min(100%, 28rem);
+  margin: -1rem auto 2rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Parágrafos e listas dentro de componentes ficam mais compactos */
+.conteudo :is(.acordeao__corpo, .carousel-item, .caixa__corpo, .colunas__corpo, .figura__legenda,
+  .tab-pane, .saiba-mais__corpo, .cartao__verso, .nota) > :last-child {
+  margin-bottom: 0;
 }
 
 :focus-visible {

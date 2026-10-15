@@ -108,6 +108,11 @@
   text-decoration: underline;
 }
 
+.modulo-card__lista strong {
+  text-decoration: none;
+  opacity: 0.75;
+}
+
 .modulo-card__lista span {
   display: block;
 }

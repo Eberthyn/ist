@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="../assets/css/curso.css">
+</head>
+
+<body>
+  <curso-pagina>
+    <h1>Fluxogramas de diagnóstico: a investigação sequencial</h1>
+
+    <p>O diagnóstico da sífilis é frequentemente comparado a um “quebra-cabeça imunológico”. Devido às limitações
+      intrínsecas de cada tecnologia, além da janela imunológica e das reações cruzadas, a utilização de um único teste
+      isolado é insuficiente e tecnicamente contraindicada.</p>
+    <p>Para solucionar essa complexidade, o <strong>Manual Técnico para Diagnóstico da Sífilis (2021)</strong>
+      estabelece dois fluxogramas padronizados que organizam a execução dos testes em uma sequência lógica e
+      complementar. O objetivo central é elevar o <strong>Valor Preditivo Positivo (VPP)</strong> da investigação:
+      assegurar que um resultado “Reagente” represente, com o máximo de certeza, uma infecção real e não uma
+      interferência laboratorial.</p>
+    <p>A definição de qual fluxograma adotar não é aleatória; ela deve ser uma decisão estratégica baseada em dois
+      pilares:</p>
+    <ul class="lista-setas">
+      <li><strong>Infraestrutura e logística:</strong> a disponibilidade de testes rápidos no ponto de atenção
+        <i>versus</i> a capacidade de processamento automatizado em laboratórios centrais.</li>
+      <li><strong>Histórico clínico-epidemiológico:</strong> a distinção fundamental entre um paciente que nunca teve
+        sífilis e aquele que possui uma provável cicatriz sorológica.<br>
+        <strong>Importante:</strong> independentemente do caminho escolhido, a quantificação da resposta imunológica é
+        mandatória. Todo teste não treponêmico reagente deve ser obrigatoriamente reportado com sua respectiva
+        <strong>titulação</strong>, pois esse dado é o que orientará o monitoramento da cura e a detecção de possíveis
+        reinfecções.
+      </li>
+    </ul>
+    <p>Confira a seguir alguns fluxos de diagnósticos utilizados:</p>
+
+    <h2>Fluxograma: abordagem clássica</h2>
+    <p>Nessa estratégia, iniciamos com um teste não treponêmico (VDRL, RPR ou USR).</p>
+    <ul class="lista-setas">
+      <li><strong>Passo 1:</strong> realiza-se o teste não treponêmico (sempre com a amostra pura e diluída a 1:8). Se
+        for não reagente, o diagnóstico é descartado (salvo suspeita de sífilis primária recente).</li>
+      <li><strong>Passo 2:</strong> se reagente, realiza-se um <strong>teste treponêmico</strong>.</li>
+    </ul>
+
+    <curso-figura larga titulo="Fluxograma: abordagem clássica" src="img/a3-fluxograma-classico.webp"
+      alt="Fluxograma da abordagem clássica: a amostra passa por teste não treponêmico; se não reagente, amostra não reagente para anticorpos não treponêmicos; se reagente, segue para teste treponêmico; se este for não reagente, realiza-se um segundo teste treponêmico de metodologia diferente para concluir."
+      fonte="DCCI/SVS/MS">
+      <ol class="notas" type="a">
+        <li>A amostra deve ser testada pura e diluída para eliminar a possibilidade do fenômeno prozona.</li>
+        <li>A amostra deve ser diluída em fator 2 e submetida ao teste não treponêmico novamente. O resultado deverá ser
+          fornecido em valor de títulos (ex.: 2, 4, 8, …, 128) ou da última diluição (ex.: 1:2, 1:4, 1:8, …, 1:128) que
+          apresentou reatividade.</li>
+        <li>A detecção de anticorpos não treponêmicos e treponêmicos é sugestiva de sífilis ativa.</li>
+        <li>Teste treponêmico com metodologia diferente do teste treponêmico já empregado no fluxograma como segundo
+          teste. Se um terceiro teste não estiver disponível, liberar resultados de cada teste individualmente para
+          avaliação e conduta clínica.</li>
+        <li>A detecção de anticorpos não treponêmicos e treponêmicos é sugestiva de sífilis ativa. Provável resultado
+          falso-não reagente no primeiro teste treponêmico realizado.</li>
+        <li>Provável resultado falso-reagente para sífilis no teste não treponêmico. Avaliar outras condições clínicas
+          que podem gerar resultados reagentes nos testes não treponêmicos.</li>
+      </ol>
+    </curso-figura>
+
+    <curso-cartoes>
+      <curso-item titulo="Vantagem">
+        <p>É uma abordagem histórica, muito útil em laboratórios que já possuem rotina de testes não treponêmicos (como
+          o VDRL) bem estabelecida.</p>
+      </curso-item>
+      <curso-item titulo="Limitação">
+        <p>Pode perder casos muito iniciais (janela imunológica), já que os testes não treponêmicos demoram um pouco
+          mais para positivar do que os treponêmicos.</p>
+      </curso-item>
+    </curso-cartoes>
+
+    <h2>Fluxograma: abordagem reversa (preferencial)</h2>
+    <p>Essa é a abordagem mais incentivada pelo Ministério da Saúde atualmente, pois deve ser iniciada com o
+      <strong>teste treponêmico</strong> (geralmente o <strong>teste rápido</strong>).</p>
+    <ul class="lista-setas">
+      <li><strong>Passo 1:</strong> realiza-se o teste treponêmico. Se não reagente, descarta-se a infecção.</li>
+      <li><strong>Passo 2:</strong> se reagente, realiza-se o <strong>teste não treponêmico</strong> para concluir o
+        diagnóstico, avaliar a atividade da doença e obter o título inicial para monitoramento do tratamento.</li>
+    </ul>
+
+    <curso-figura larga titulo="Fluxograma: abordagem reversa (preferencial)" src="img/a3-fluxograma-reverso.webp"
+      alt="Fluxograma da abordagem reversa: a amostra passa por teste treponêmico (rápido ou laboratorial); se não reagente, amostra não reagente para anticorpos treponêmicos; se reagente, segue para teste não treponêmico; se este for não reagente, realiza-se um segundo teste treponêmico de metodologia diferente para concluir."
+      fonte="DCCI/SVS/MS">
+      <ol class="notas" type="a">
+        <li>A amostra deve ser testada pura e diluída para eliminar a possibilidade do fenômeno prozona.</li>
+        <li>A amostra deve ser diluída em fator 2 e submetida ao teste não treponêmico novamente. O resultado deverá ser
+          fornecido em valor de títulos (ex.: 2, 4, 8, …, 128) ou da última diluição (ex.: 1:2, 1:4, 1:8, …, 1:128) que
+          apresentou reatividade.</li>
+        <li>A detecção de anticorpos treponêmicos e não treponêmicos é sugestiva de sífilis ativa.</li>
+        <li>Teste treponêmico com metodologia diferente do teste treponêmico já empregado no fluxograma como primeiro
+          teste. Se não disponível, liberar resultados de cada teste individualmente para avaliação e conduta clínica.
+        </li>
+        <li>A detecção somente de anticorpos treponêmicos é sugestiva de sífilis recente ou cicatriz sorológica. Avaliar
+          exposição de risco, sinais e sintomas e histórico de tratamento de sífilis para definição de conduta clínica.
+        </li>
+        <li>A ausência de detecção de anticorpos não treponêmicos e a não confirmação de reatividade de anticorpos
+          treponêmicos é sugestiva de ausência de sífilis. Provável ocorrência de resultado falso-reagente no primeiro
+          teste treponêmico realizado.</li>
+      </ol>
+    </curso-figura>
+
+    <curso-cartoes>
+      <curso-item titulo="Vantagem">
+        <p>Maior sensibilidade na sífilis primária e facilidade de execução no Ponto de Atenção (UBS/Maternidade, CTA
+          etc.), permitindo o tratamento imediato.</p>
+      </curso-item>
+    </curso-cartoes>
+
+    <h2>O desafio das discordâncias: terceiro teste</h2>
+    <p>Um dos pontos mais importantes da <strong>RDC nº 978/2025</strong> e do <strong>Manual Técnico de Diagnóstico
+        (2021)</strong> é como lidar com resultados discordantes.</p>
+
+    <curso-tabela>
+      <table>
+        <thead>
+          <tr>
+            <th>Cenário de discordância</th>
+            <th>Interpretação provável</th>
+            <th>Conduta para Conclusão do Fluxograma de Diagnóstico (o terceiro teste)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Treponêmico (+) e Não Treponêmico (-)</td>
+            <td>A não detecção de anticorpos pelo teste não treponêmico pode significar infecção muito recente ou
+              presença de cicatriz sorológica pós-tratamento. Avaliar exposição de risco, sinais e sintomas e histórico
+              de tratamento de sífilis para definição de conduta clínica. Em casos diagnosticados muito tardiamente, com
+              o tempo pode ocorrer queda e, ocasionalmente, negativação do teste não treponêmico, mesmo sem tratamento.
+            </td>
+            <td>Realizar um 3º teste treponêmico com metodologia diferente (ex.: se usou TR, faz ELISA,
+              Quimioluminescência, testes de aglutinação ou FTA-abs). Considerar tratamento conforme avaliação clínica.
+            </td>
+          </tr>
+          <tr>
+            <td>Não Treponêmico (+) e Treponêmico (-)</td>
+            <td>Provável falso-positivo do VDRL (reação biológica). Estima-se que em 0,2% a 0,8% dos casos podem estar
+              associados a reação biológica conforme item 2.4. Resultados Falso-Positivos (Reações Biológicas).</td>
+            <td>Realizar um 3º teste treponêmico com metodologia diferente para confirmar o descarte. (ex.: se usou TR,
+              faz ELISA, Quimioluminescência, testes de aglutinação ou FTA-abs).</td>
+          </tr>
+        </tbody>
+      </table>
+    </curso-tabela>
+
+    <p>Para facilitar a vida do profissional na ponta, podemos resumir a escolha do fluxograma assim:</p>
+
+    <curso-figura src="img/a3-escolha-do-fluxograma.webp"
+      alt="Guia de escolha do fluxograma em três perguntas. 1: Não conheço o histórico do paciente? Use o fluxograma reverso, começando pelo teste rápido. 2: O paciente já teve sífilis antes? Use o fluxograma clássico, começando pelo teste não treponêmico, pois o treponêmico provavelmente será reagente (cicatriz sorológica treponêmica em 85% dos casos). 3: É uma emergência (maternidade ou abuso sexual)? Use o teste rápido imediatamente e trate na hora, se for reagente, coletando o sangue para o VDRL o mais rápido possível."></curso-figura>
+
+    <curso-saiba-mais titulo="Sobre o laudo final e as ressalvas e observações que devem constar nele.">
+      <p>Independentemente do fluxograma, o laudo final deve ser claro. Se houve discordância e foi necessário um
+        terceiro teste, isso deve constar na conclusão para que o clínico entenda que a investigação foi completa.</p>
+      <p>Para mais informações sobre as ressalvas e observações que devem constar no laudo, consulte o <a
+          href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/sifilis/publicacoes/manual-tecnico-para-o-diagnostico-da-sifilis.pdf"
+          target="_blank" rel="noopener">Manual Técnico de Diagnóstico da Sífilis</a>, do Ministério da Saúde e as
+        recomendações do Ministério da Saúde na <a
+          href="https://www.gov.br/aids/pt-br/central-de-conteudo/notas-tecnicas/2023/sei_ms_-_0034352557_-_nota_tecnica_penicilina.pdf"
+          target="_blank" rel="noopener">Nota Técnica nº 14/2023-DATHI/SVSA/MS</a> e no <a
+          href="https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_clinico_hiv_sifilis_hepatites.pdf" target="_blank"
+          rel="noopener">PCDT de transmissão vertical</a>.</p>
+    </curso-saiba-mais>
+
+    <p>Para que o diagnóstico da sífilis seja ágil, o PCDT de IST e o <a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/sifilis/publicacoes/manual-tecnico-para-o-diagnostico-da-sifilis.pdf"
+          target="_blank" rel="noopener">Manual Técnico de Diagnóstico da Sífilis</a>
+      orientam que o formulário de solicitação deve conter informações clínicas e testes prévios para orientar o
+      laboratório. Clique nas setas para conhecer os três cenários para solicitação dos exames complementares.</p>
+
+    <curso-carrossel>
+      <curso-item titulo="Diagnóstico inicial (sem teste rápido prévio)">
+        <ul>
+          <li><strong>Quando usar:</strong> quando a unidade está temporariamente sem kits de Teste Rápido (TR) ou
+            quando o fluxo laboratorial da região prioriza a coleta de sangue venoso como porta de entrada.</li>
+          <li><strong>O que escrever:</strong> “<i>Solicito diagnóstico de sífilis (Investigação Inicial)</i>.”</li>
+          <li><strong>O que o laboratório fará:</strong> é preferencial a utilização do Fluxograma 2 (abordagem reversa)
+            quando não se conhece o histórico de sífilis. Nos casos em que há o registro de sífilis passada,
+            recomenda-se a utilização do Fluxograma 1.</li>
+        </ul>
+      </curso-item>
+      <curso-item titulo="Complementação/Conclusão diagnóstica (Pós-Teste Rápido Reagente na Atenção Primária)">
+        <ul>
+          <li><strong>Quando usar:</strong> esse é o cenário mais comum na Atenção Primária. Se o TR for Reagente, agora é necessário saber qual é o título do teste não treponêmico para definir a conduta.</li>
+          <li><strong>O que escrever:</strong> “<i>Solicito teste não treponêmico (VDRL/RPR) após Teste Rápido Reagente.</i>”</li>
+          <li><strong>O que o laboratório fará:</strong> trata-se do Fluxograma 2 iniciado com teste treponêmico no serviço de atenção.</li>
+        </ul>
+      </curso-item>
+      <curso-item titulo="Monitoramento e Controle de cura">
+        <ul>
+          <li><strong>Quando usar:</strong> quando o paciente já foi diagnosticado e já completou o tratamento. Aqui, o objetivo não é diagnosticar a doença, mas sim monitorar a queda dos títulos com o tratamento.</li>
+          <li><strong>O que escrever:</strong> “<i>Solicito titulação de teste não treponêmico (Controle de Cura/Seguimento).</i>”</li>
+          <li><strong>O que o laboratório fará:</strong> não se aplica aos fluxogramas de diagnóstico. Realizar teste não treponêmico para avaliação da titulação da amostra. Esse teste deve ter a mesma metodologia utilizada ao diagnóstico, quando informado pelo profissional solicitante.</li>
+          <li>Se possível, deve-se indicar o título anterior na solicitação dos novos exames (Ex.: “<i>Último título: 1:32</i>”). Isso ajuda o laboratório a identificar precocemente variações atípicas ou o fenômeno de prozona.</li>
+        </ul>
+      </curso-item>
+    </curso-carrossel>
+
+    <h3>O significado clínico dos resultados combinados</h3>
+    <p>Após percorrer os fluxogramas, o profissional se depara com combinações de resultados. Entender o que cada par de
+      testes significa é o que diferencia um diagnóstico preciso de um tratamento desnecessário.</p>
+    <p>A tabela a seguir resume a lógica diagnóstica preconizada pelo <strong>PCDT IST (2020)</strong>:</p>
+
+    <curso-figura larga
+      titulo="Resultados de testes treponêmicos e não treponêmicos de sífilis: interpretação e conduta"
+      src="img/a3-interpretacao-e-conduta.webp"
+      alt="Quadro com as combinações de primeiro teste e teste complementar (treponêmico e não treponêmico, reagente ou não reagente), as possíveis interpretações e a conduta recomendada para cada uma."
+      fonte="DCCI/SVS/MS"></curso-figura>
+  </curso-pagina>
+
+  <script src="../assets/js/curso.js"></script>
+</body>
+
+</html>

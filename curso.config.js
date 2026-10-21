@@ -21,16 +21,18 @@ window.CURSO_CONFIG = {
     { rotulo: 'Referências', icone: 'file-earmark-text', arquivo: 'referencias.html' },
   ],
 
+  // emBreve: true mostra a etiqueta "Em breve" no card do módulo na home.
   modulos: [
     {
       numero: 1,
-      titulo: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
+      titulo: 'Diretrizes para o diagnóstico da infecção pelo HIV',
+      emBreve: true,
       introducao: {},
       aulas: [
-        { titulo: 'Lorem ipsum dolor sit amet consectetur adipiscing elit' },
-        { titulo: 'Lorem ipsum dolor sit amet consectetur adipiscing elit' },
-        { titulo: 'Lorem ipsum dolor sit amet consectetur adipiscing elit' },
-        { titulo: 'Lorem ipsum dolor sit amet consectetur adipiscing elit' },
+        { titulo: 'Em breve' },
+        { titulo: 'Em breve' },
+        { titulo: 'Em breve' },
+        { titulo: 'Em breve' },
       ],
       resumo: {},
     },
@@ -52,6 +54,7 @@ window.CURSO_CONFIG = {
     {
       numero: 3,
       titulo: 'Diagnósticos das hepatites A, B, C, D e E',
+      emBreve: true,
       introducao: {},
       aulas: [
         { titulo: 'Aspectos introdutórios: conceituação básica de hepatites virais e epidemiologia geral' },
@@ -78,13 +81,14 @@ window.CURSO_CONFIG = {
     },
     {
       numero: 5,
-      titulo: 'Lorem ipsum dolor sit amet consectetur adipiscing elit ipsum dolor sit amet',
+      titulo: 'Coleta de sangue para diagnóstico laboratorial do HIV, sífilis, hepatites virais e outras IST',
+      emBreve: true,
       introducao: {},
       aulas: [
-        { titulo: 'Lorem ipsum dolor sit amet consectetur adipiscing elit' },
-        { titulo: 'Lorem ipsum dolor sit amet consectetur adipiscing elit' },
-        { titulo: 'Lorem ipsum dolor sit amet consectetur adipiscing elit' },
-        { titulo: 'Lorem ipsum dolor sit amet consectetur adipiscing elit' },
+        { titulo: 'Em breve' },
+        { titulo: 'Em breve' },
+        { titulo: 'Em breve' },
+        { titulo: 'Em breve' },
       ],
       resumo: {},
     },

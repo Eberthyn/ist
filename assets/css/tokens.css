@@ -21,13 +21,13 @@
   /* Tipografia */
   --fonte-texto: "Roboto", system-ui, sans-serif;
   --fonte-titulo: "Roboto Condensed", "Roboto", system-ui, sans-serif;
-  --texto-tamanho: 1.125rem;
+  --texto-tamanho: 1.2rem;
   --texto-altura: 1.7;
 
   /* Medidas */
   --topo-altura: 3.75rem;
   --menu-largura: 15rem;
-  --conteudo-largura: 43rem;
+  --conteudo-largura: 50rem;
 
   /* Bootstrap segue o tema */
   --bs-body-font-family: var(--fonte-texto);

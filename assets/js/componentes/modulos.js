@@ -1,5 +1,6 @@
 /* <curso-modulos>
-   Cards dos módulos na home, gerados de curso.config.js. */
+   Cards dos módulos na home, gerados de curso.config.js.
+   Módulos com "emBreve: true" no config ganham a etiqueta "Em breve". */
 (function () {
   const { Componente, definir, esc, config } = window.Curso;
 
@@ -14,6 +15,7 @@
   const card = (m) => `
     <article class="modulo-card">
       <header class="modulo-card__topo">
+        ${m.emBreve ? '<span class="modulo-card__etiqueta">Em breve</span>' : ''}
         <h3>Módulo ${m.numero}</h3>
         <p>${esc(m.titulo)}</p>
       </header>

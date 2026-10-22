@@ -193,7 +193,6 @@
   display: flex;
   flex-direction: column;
   background: var(--pagina-fundo);
-  container-type: inline-size; /* permite que blocos "sangrem" até a borda (ver .nota) */
 }
 
 .conteudo {
@@ -220,7 +219,7 @@ curso-menu {
   --bs-offcanvas-bg: var(--menu-fundo);
   --bs-offcanvas-color: var(--menu-texto);
   color: var(--menu-texto);
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.35;
 }
 
@@ -360,5 +359,5 @@ curso-menu {
 }
 
 .rodape img {
-  width: 52rem;
+  width: 67.5rem;
 }

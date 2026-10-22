@@ -20,7 +20,7 @@
   min-width: 12.5rem;
   padding: 0.5rem 1.25rem;
   border-radius: 0;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -58,13 +58,14 @@
   padding-left: 1.25rem;
 }
 
-.lista-setas > li {
+.lista-setas>li {
   position: relative;
   padding-left: 2rem;
 }
 
-.lista-setas > li::before {
-  content: "\F138"; /* bi-arrow-right */
+.lista-setas>li::before {
+  content: "\F138";
+  /* bi-arrow-right */
   position: absolute;
   left: 0;
   font-family: "bootstrap-icons";
@@ -91,9 +92,84 @@
   width: 100%;
 }
 
+/* Lupa: botão que envolve a imagem ampliável */
 .figura__ampliar {
+  position: relative;
   display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
   cursor: zoom-in;
+}
+
+.figura__lupa {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--cor-azul);
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.3);
+  font-size: 1.15rem;
+  color: var(--cor-branco);
+  transition: transform 0.15s;
+}
+
+.figura__ampliar:hover .figura__lupa,
+.figura__ampliar:focus-visible .figura__lupa {
+  transform: scale(1.1);
+}
+
+/* Janela de ampliação: tela cheia, fundo branco */
+.ampliacao .modal-content {
+  border: 0;
+  border-radius: 0;
+  background: var(--cor-branco);
+}
+
+.ampliacao__corpo {
+  overflow: auto;
+  padding: 3.5rem 1.5rem 1.5rem;
+}
+
+.ampliacao__imagem {
+  display: block;
+  width: min(100%, 1640px);
+  max-width: none;
+  margin: 0 auto;
+}
+
+/* No celular a imagem fica maior que a tela e pode ser arrastada para os lados */
+@media (max-width: 991.98px) {
+  .ampliacao__imagem {
+    width: 40rem;
+  }
+}
+
+.ampliacao__fechar {
+  position: fixed;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--cor-azul);
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.3);
+  font-size: 1.25rem;
+  color: var(--cor-branco);
+}
+
+.ampliacao__fechar:hover {
+  background: var(--cor-azul-escuro);
 }
 
 .figura__imagem--vazia {
@@ -192,7 +268,7 @@
   margin: 2rem auto 2.5rem;
 }
 
-.acordeao__item + .acordeao__item {
+.acordeao__item+.acordeao__item {
   margin-top: 0.5rem;
 }
 
@@ -310,6 +386,7 @@
 .carrossel__seta--esq {
   left: 0;
 }
+
 .carrossel__seta--dir {
   right: 0;
 }
@@ -326,7 +403,8 @@
   grid-template-columns: repeat(auto-fit, minmax(12rem, 15rem));
   justify-content: center;
   gap: 1rem;
-  max-width: 32rem; /* no máximo dois por linha, como no design */
+  max-width: 32rem;
+  /* no máximo dois por linha, como no design */
   margin: 2rem auto 2.5rem;
 }
 
@@ -386,6 +464,7 @@
 .cartao--virado .cartao__frente {
   transform: rotateY(-180deg);
 }
+
 .cartao--virado .cartao__verso {
   transform: rotateY(0);
 }
@@ -428,14 +507,13 @@
   padding: 1.5rem 1.25rem;
 }
 
-.caixa .lista-setas > li::before {
+.caixa .lista-setas>li::before {
   color: var(--cor-azul);
 }
 
 /* ---- Nota (faixa azul) ----------------------------------------------- */
 .nota {
-  /* Para uma nota que não vá até a borda, é só dar a ela margin-right: 0 */
-  margin: 2.5rem calc((100% - 100cqw) / 2) 2.5rem 0;
+  margin: 2.5rem 0;
   padding: 1.25rem 1.5rem;
   background: var(--cor-azul);
   font-size: 1.05rem;
@@ -524,7 +602,7 @@
 }
 
 /* Subcabeçalho (segunda linha do cabeçalho) */
-.tabela thead tr + tr th,
+.tabela thead tr+tr th,
 .tabela th.tabela__sub {
   background: var(--cor-verde-escuro);
 }
@@ -535,7 +613,7 @@
   vertical-align: top;
 }
 
-.tabela td + td {
+.tabela td+td {
   border-left: 1px solid var(--cor-borda);
 }
 
@@ -569,7 +647,7 @@
   flex-direction: column;
 }
 
-.colunas__coluna + .colunas__coluna .colunas__corpo {
+.colunas__coluna+.colunas__coluna .colunas__corpo {
   border-left: 1px solid var(--cor-borda);
 }
 
@@ -629,7 +707,7 @@
   padding-left: 1.25rem;
 }
 
-.termo__definicao .popover-body > :last-child {
+.termo__definicao .popover-body> :last-child {
   margin-bottom: 0;
 }
 
@@ -680,8 +758,9 @@
 }
 
 /* Seta entre as etapas */
-.etapas__item + .etapas__item::before {
-  content: "\F138"; /* bi-arrow-right */
+.etapas__item+.etapas__item::before {
+  content: "\F138";
+  /* bi-arrow-right */
   position: absolute;
   top: 50%;
   left: -2.1rem;
@@ -707,7 +786,7 @@
     min-height: 0;
   }
 
-  .etapas__item + .etapas__item::before {
+  .etapas__item+.etapas__item::before {
     top: -1.75rem;
     left: 50%;
     transform: translateX(-50%) rotate(90deg);
@@ -735,13 +814,13 @@
 
 .modal-curso__corpo {
   padding: 1.5rem;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   line-height: 1.6;
 }
 
 .modal-curso__corpo--imagem {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  grid-template-columns: 11rem minmax(0, 1fr);
   gap: 1.5rem;
   align-items: start;
 }
@@ -753,7 +832,7 @@
 
 .modal-curso__titulo {
   margin: 0 2rem 0.25rem 0;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -775,4 +854,60 @@
     max-width: 12rem;
     margin: 0 auto;
   }
+}
+
+/* =====================================================================
+   PÁGINAS EXTRAS (Referências e Créditos)
+   ===================================================================== */
+
+/* Título no mesmo estilo do H1 das aulas (ex.: "Módulo 2: …" nas Referências) */
+.conteudo .estilo-h1 {
+  margin: 3rem 0 1.5rem;
+  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.25rem);
+  color: var(--pagina-h1);
+}
+
+.referencias p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  /* endereços longos não estouram a coluna */
+}
+
+.conteudo .referencias a {
+  font-weight: 400;
+}
+
+/* Créditos: tudo em Roboto, respeitando negrito, regular e itálico */
+.creditos {
+  font-family: var(--fonte-texto);
+}
+
+.creditos h2,
+.creditos h3 {
+  font-family: var(--fonte-texto);
+  font-weight: 700;
+}
+
+.creditos h2 {
+  margin: 2.5rem 0 1rem;
+  font-size: 1.25rem;
+  color: var(--pagina-h1);
+}
+
+.creditos h3 {
+  margin: 2rem 0 0.75rem;
+  font-size: 1rem;
+  text-transform: none;
+  color: var(--pagina-texto);
+}
+
+.creditos p {
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.creditos small {
+  font-size: 0.875em;
 }

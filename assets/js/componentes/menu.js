@@ -17,16 +17,20 @@
     return `<li>${item(pagina, esc(pagina.rotulo) + titulo, 'menu__item')}</li>`;
   };
 
-  const modulo = (m) => `
+  // Só o módulo da página atual começa aberto; os demais ficam recolhidos.
+  const modulo = (m) => {
+    const aberto = Boolean(atual && atual.modulo === m);
+    return `
     <section class="menu__modulo">
-      <button class="menu__titulo" type="button" data-bs-toggle="collapse"
-        data-bs-target="#menu-modulo-${m.numero}" aria-expanded="true" aria-controls="menu-modulo-${m.numero}">
+      <button class="menu__titulo ${aberto ? '' : 'collapsed'}" type="button" data-bs-toggle="collapse"
+        data-bs-target="#menu-modulo-${m.numero}" aria-expanded="${aberto}" aria-controls="menu-modulo-${m.numero}">
         Módulo ${m.numero} ${icone('caret-up-fill')}
       </button>
-      <ol class="menu__lista collapse show" id="menu-modulo-${m.numero}">
+      <ol class="menu__lista collapse ${aberto ? 'show' : ''}" id="menu-modulo-${m.numero}">
         ${m.paginas.map(itemDoModulo).join('')}
       </ol>
     </section>`;
+  };
 
   definir('curso-menu', class extends Componente {
     montar() {

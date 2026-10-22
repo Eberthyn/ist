@@ -1,14 +1,38 @@
-/* <curso-figura titulo="..." src="..." alt="..." fonte="..." [fonte-link="..."] [legenda="..."] [larga]>
+/* <curso-figura titulo="..." src="..." alt="..." fonte="..." [fonte-link="..."] [legenda="..."] [larga] [ampliar]>
     [texto da legenda]
    </curso-figura>
    Imagem, gráfico ou foto.
    - titulo: aparece acima da imagem (ou <curso-titulo> para usar itálico etc.).
    - legenda + conteúdo interno: aparecem abaixo da imagem (título rosa e texto).
-   - larga: ocupa toda a largura do conteúdo e abre a imagem em tamanho real
-     ao clicar (fluxogramas, linhas do tempo, quadros).
+   - ampliar: mostra a lupa; ao clicar, a imagem abre ampliada na mesma página,
+     em fundo branco, e fecha voltando ao ponto da leitura (infográficos).
+   - larga: ocupa toda a largura do conteúdo (fluxogramas, linhas do tempo,
+     quadros). Figuras largas também ganham a lupa.     ao clicar (fluxogramas, linhas do tempo, quadros).
    Sem "src" mostra um espaço reservado (útil enquanto a arte não chega). */
 (function () {
-  const { Componente, definir, esc, criar, fonteHtml } = window.Curso;
+  const { Componente, definir, esc, criar, fonteHtml, icone } = window.Curso;
+
+  // Janela única de ampliação, criada na primeira vez que for usada
+  let janela = null;
+  const ampliar = (src, alt) => {
+    if (!janela) {
+      janela = criar('div', 'modal fade ampliacao');
+      janela.tabIndex = -1;
+      janela.setAttribute('aria-label', 'Imagem ampliada');
+      janela.innerHTML = `
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+            <button type="button" class="ampliacao__fechar" data-bs-dismiss="modal" aria-label="Fechar imagem ampliada">${icone('x-lg')}</button>
+            <div class="modal-body ampliacao__corpo"><img class="ampliacao__imagem" alt=""></div>
+          </div>
+        </div>`;
+      document.body.append(janela);
+    }
+    const img = janela.querySelector('.ampliacao__imagem');
+    img.src = src;
+    img.alt = alt;
+    bootstrap.Modal.getOrCreateInstance(janela).show();
+  };
 
   definir('curso-figura', class extends Componente {
     montar() {
@@ -22,16 +46,17 @@
 
       // Figuras largas (fluxogramas, quadros) abrem em tamanho real ao clicar — útil no celular
       const larga = this.hasAttribute('larga');
-      const ampliar = (img) => (larga ? `<a class="figura__ampliar" href="${esc(src)}" target="_blank" rel="noopener" title="Abrir imagem em tamanho real">${img}</a>` : img);
+      const ampliavel = src && (larga || this.hasAttribute('ampliar'));
+      const alt = this.attr('alt');
 
       const figura = criar('figure', `figura ${larga ? 'figura--larga' : ''}`);
       figura.innerHTML = `
         ${titulo ? `<figcaption class="figura__titulo">${titulo}</figcaption>` : ''}
         ${src
-          ? ampliar(`<img class="figura__imagem" src="${esc(src)}" alt="${esc(this.attr('alt'))}" loading="lazy">`)
+          ? `<img class="figura__imagem" src="${esc(src)}" alt="${esc(alt)}" loading="lazy">`
           : '<div class="figura__imagem figura__imagem--vazia" role="img" aria-label="Imagem a definir"></div>'}
         ${fonteHtml(this)}`;
-        
+
       if (legenda || texto.length) {
         const bloco = criar('div', 'figura__legenda', texto);
         if (legenda) bloco.insertAdjacentHTML('afterbegin', `<p class="figura__legenda-titulo">${esc(legenda)}</p>`);
@@ -42,6 +67,18 @@
         } else {
           figura.append(bloco);
         }
+      }
+
+      // Lupa: envolve a imagem num botão que abre a ampliação
+      if (ampliavel) {
+        const imagem = figura.querySelector('.figura__imagem');
+        const botao = criar('button', 'figura__ampliar');
+        botao.type = 'button';
+        botao.setAttribute('aria-label', 'Ampliar imagem');
+        imagem.replaceWith(botao);
+        botao.append(imagem);
+        botao.insertAdjacentHTML('beforeend', `<span class="figura__lupa" aria-hidden="true">${icone('zoom-in')}</span>`);
+        botao.addEventListener('click', () => ampliar(src, alt));
       }
 
       this.replaceChildren(figura);

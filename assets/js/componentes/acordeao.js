@@ -5,8 +5,8 @@
        …conteúdo…
      </curso-item>
    </curso-acordeao>
-   Painéis que abrem e fecham. "aberto" deixa o item aberto ao carregar
-   (sem nenhum "aberto", o primeiro começa aberto). "independente" no
+   Painéis que abrem e fecham. Todos começam fechados; "aberto" deixa um
+   item aberto ao carregar. "independente" no
    acordeão permite vários abertos ao mesmo tempo. */
 (function () {
   const { Componente, definir, icone, novoId, lerItens, criar } = window.Curso;
@@ -15,12 +15,12 @@
     montar() {
       const id = novoId('acordeao');
       const itens = lerItens(this);
-      const algumAberto = itens.some(({ item }) => item.hasAttribute('aberto'));
+      // const algumAberto = itens.some(({ item }) => item.hasAttribute('aberto'));
       const lista = criar('div', 'acordeao');
       lista.id = id;
 
-      itens.forEach(({ titulo, conteudo, item }, i) => {
-        const aberto = item.hasAttribute('aberto') || (!algumAberto && i === 0);
+      itens.forEach(({ titulo, conteudo, item }) => {
+        const aberto = item.hasAttribute('aberto');
         const painel = novoId('painel');
         const bloco = criar('section', 'acordeao__item');
         bloco.innerHTML = `

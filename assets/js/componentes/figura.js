@@ -40,6 +40,9 @@
       const tituloEl = this.querySelector(':scope > curso-titulo');
       const titulo = tituloEl ? tituloEl.innerHTML : esc(this.attr('titulo'));
       if (tituloEl) tituloEl.remove();
+      // Audiodescrição: sai do conteúdo da legenda e vai para baixo da imagem
+      const audiodescricao = this.querySelector(':scope > curso-audiodescricao');
+      if (audiodescricao) audiodescricao.remove();
       const src = this.attr('src');
       const legenda = this.attr('legenda');
       const texto = [...this.childNodes].filter((n) => n.nodeType === 1 || n.textContent.trim());
@@ -56,6 +59,8 @@
           ? `<img class="figura__imagem" src="${esc(src)}" alt="${esc(alt)}" loading="lazy">`
           : '<div class="figura__imagem figura__imagem--vazia" role="img" aria-label="Imagem a definir"></div>'}
         ${fonteHtml(this)}`;
+
+      if (audiodescricao) figura.append(audiodescricao);
 
       if (legenda || texto.length) {
         const bloco = criar('div', 'figura__legenda', texto);
@@ -77,7 +82,7 @@
         botao.setAttribute('aria-label', 'Ampliar imagem');
         imagem.replaceWith(botao);
         botao.append(imagem);
-        botao.insertAdjacentHTML('beforeend', `<span class="figura__lupa" aria-hidden="true">${icone('zoom-in')}</span>`);
+        botao.insertAdjacentHTML('beforeend', `<span class="figura__lupa" aria-hidden="true">${icone('zoom-in')} Ampliar</span>`);
         botao.addEventListener('click', () => ampliar(src, alt));
       }
 

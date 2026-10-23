@@ -31,6 +31,7 @@
     'assets/js/componentes/navegacao.js',
     'assets/js/componentes/rodape.js',
     // conteúdo
+    'assets/js/componentes/audiodescricao.js',
     'assets/js/componentes/figura.js',
     'assets/js/componentes/destaque.js',
     'assets/js/componentes/video.js',

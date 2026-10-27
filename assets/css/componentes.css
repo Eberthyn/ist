@@ -252,6 +252,10 @@
   width: 100%;
 }
 
+.figura--estreita {
+  width: min(100%, 15rem);
+}
+
 .figura__legenda {
   margin-top: 1rem;
   font-size: 1.05rem;
@@ -940,4 +944,306 @@ curso-audiodescricao {
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
   border: 0 !important;
+}
+
+/* =====================================================================
+   MÓDULO 3 — blocos novos (reutilizáveis em qualquer aula)
+   ===================================================================== */
+
+/* ---- Saiba mais fixo (sem botão: caixa azul sempre visível) ---------- */
+.saiba-mais--fixo {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.85rem;
+  width: min(100%, 36rem);
+  margin: 2.5rem auto;
+  padding: 1rem 1.5rem 1.1rem 1.25rem;
+  border-radius: 0.375rem;
+  background: var(--cor-azul);
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.2);
+  font-size: 1.05rem;
+  line-height: 1.45;
+  color: var(--cor-branco);
+}
+
+.saiba-mais--fixo>.bi {
+  grid-row: span 2;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.saiba-mais__rotulo {
+  margin: 0 !important;
+  font-weight: 700;
+}
+
+.saiba-mais__texto> :last-child {
+  margin-bottom: 0;
+}
+
+.conteudo .saiba-mais--fixo a {
+  color: inherit;
+}
+
+/* ---- Imagem (ícone ou foto) ao lado do texto ---------------------------
+   <div class="midia"> <img class="midia__imagem" src="…" alt=""> <div>…</div> </div>
+   "midia--redonda": imagem em círculo (ex.: fase aguda / fase crônica).
+   Empilha no celular.                                                    */
+.midia {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 0 0 1rem;
+}
+
+.midia__imagem {
+  flex: 0 0 auto;
+  width: 5.5rem;
+  height: auto;
+}
+
+.midia> :last-child> :last-child {
+  margin-bottom: 0;
+}
+
+.midia--redonda {
+  align-items: flex-start;
+  margin: 2rem 0;
+}
+
+.midia--redonda .midia__imagem {
+  width: 7rem;
+}
+
+.midia__titulo {
+  margin: 0 !important;
+  font-weight: 700;
+}
+
+@media (max-width: 575.98px) {
+  .midia {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
+
+/* ---- Frase em destaque (azul, negrito, itálico, centralizada) ------- */
+.conteudo .frase-destaque {
+  margin: 2rem 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-style: italic;
+  text-align: center;
+  color: var(--cor-azul);
+}
+
+/* ---- Subtítulo em caixa alta (ELISA, ECLIA, COINFECÇÃO…) ------------- */
+.conteudo .subtitulo {
+  margin: 2rem 0 1rem;
+  font-family: var(--fonte-texto);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--cor-azul);
+}
+
+/* ---- Fases (linha do tempo vertical com imagens) -------------------- */
+.fases-bloco {
+  width: min(100%, 36rem);
+  margin: 2.5rem auto;
+}
+
+.fases {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fases__item {
+  --fase-cor: #1aa3b4;
+  position: relative;
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.fases__item:nth-child(4n + 2) {
+  --fase-cor: #f39c12;
+}
+
+.fases__item:nth-child(4n + 3) {
+  --fase-cor: #ef5b45;
+}
+
+.fases__item:nth-child(4n + 4) {
+  --fase-cor: #3b9b62;
+}
+
+/* traço até a próxima fase */
+.fases__item:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 5.5rem;
+  bottom: 0;
+  left: calc(3.25rem - 2px);
+  width: 4px;
+  background: var(--fase-cor);
+}
+
+.fases__imagem {
+  position: relative;
+  width: 6.5rem;
+  height: auto;
+}
+
+.fases__titulo {
+  margin: 0 0 0.25rem !important;
+  font-weight: 700;
+}
+
+.fases__texto {
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.fases__texto ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.fases-bloco .figura__fonte {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 575.98px) {
+  .fases__item {
+    grid-template-columns: 4.5rem 1fr;
+    gap: 1rem;
+  }
+
+  .fases__imagem {
+    width: 4.5rem;
+  }
+
+  .fases__item:not(:last-child)::before {
+    top: 4rem;
+    left: calc(2.25rem - 2px);
+  }
+}
+
+/* ---- Grade de cartões com ícone (prevenção, resultados…) ------------
+   <ul class="grade-icones"> <li> <img src="…" alt=""> <p>…</p> </li> </ul> */
+.grade-icones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 13rem));
+  justify-content: center;
+  gap: 1.25rem;
+  margin: 2.5rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.grade-icones>li {
+  padding: 1.75rem 1.25rem 1.5rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 0.375rem;
+  background: var(--cor-branco);
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.12);
+  font-size: 1rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.grade-icones img {
+  display: block;
+  width: 7rem;
+  height: auto;
+  margin: 0 auto 1.25rem;
+}
+
+.grade-icones>li> :last-child {
+  margin-bottom: 0;
+}
+
+/* Variante sem caixa, alinhada à esquerda (ex.: resultados do teste rápido) */
+.grade-icones--simples>li {
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  text-align: left;
+}
+
+.grade-icones--simples img {
+  width: 9rem;
+  margin: 0 0 1rem;
+}
+
+.grade-icones__titulo {
+  margin: 0 0 0.5rem !important;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--cor-azul);
+}
+
+.grade-icones--simples ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+/* ---- Sequência com setas para baixo (etapas da PCR) ----------------- */
+.fluxo-passos {
+  margin: 2rem 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--fonte-titulo);
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--cor-verde-escuro);
+}
+
+.fluxo-passos>li+li::before {
+  content: "\F128";
+  /* bi-arrow-down */
+  display: block;
+  margin: 0.25rem 0;
+  font-family: "bootstrap-icons";
+  font-weight: 400;
+}
+
+/* ---- Slide de etapa (imagem + texto lado a lado no carrossel) ------- */
+.passo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  min-height: 10rem;
+}
+
+.passo__imagem {
+  flex: 0 0 auto;
+  width: 6rem;
+  height: auto;
+}
+
+.passo__titulo {
+  margin: 0 !important;
+  font-family: var(--fonte-titulo);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--cor-rosa);
+}
+
+.passo__titulo+p {
+  margin: 0.25rem 0 0 !important;
+}
+
+@media (max-width: 575.98px) {
+  .passo {
+    flex-direction: column;
+    text-align: center;
+  }
 }

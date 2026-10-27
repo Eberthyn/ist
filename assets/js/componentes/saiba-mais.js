@@ -8,6 +8,13 @@
     montar() {
       const painel = novoId('saiba-mais');
       const tituloEl = this.querySelector(':scope > curso-titulo');
+      if (!tituloEl && !this.hasAttribute('titulo')) {
+        const caixa = criar('aside', 'saiba-mais saiba-mais--fixo');
+        caixa.innerHTML = `${icone('hand-index-thumb-fill')}<p class="saiba-mais__rotulo">Saiba mais</p>`;
+        caixa.append(criar('div', 'saiba-mais__texto', [...this.childNodes]));
+        this.replaceChildren(caixa);
+        return;
+      }
       const assunto = tituloEl ? tituloEl.innerHTML : esc(this.attr('titulo'));
       if (tituloEl) tituloEl.remove();
       const bloco = criar('div', 'saiba-mais');

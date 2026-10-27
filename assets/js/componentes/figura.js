@@ -52,7 +52,7 @@
       const ampliavel = src && (larga || this.hasAttribute('ampliar'));
       const alt = this.attr('alt');
 
-      const figura = criar('figure', `figura ${larga ? 'figura--larga' : ''}`);
+      const figura = criar('figure', `figura ${larga ? 'figura--larga' : ''} ${this.hasAttribute('estreita') ? 'figura--estreita' : ''}`);
       figura.innerHTML = `
         ${titulo ? `<figcaption class="figura__titulo">${titulo}</figcaption>` : ''}
         ${src

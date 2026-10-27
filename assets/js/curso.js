@@ -48,6 +48,7 @@
     'assets/js/componentes/termo.js',
     'assets/js/componentes/etapas.js',
     'assets/js/componentes/modal.js',
+    'assets/js/componentes/fases.js',
     // layout completo (por último: usa os anteriores)
     'assets/js/componentes/pagina.js',
   ];

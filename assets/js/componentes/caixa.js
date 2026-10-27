@@ -6,6 +6,7 @@
   const TIPOS = {
     refletir: { titulo: 'Para refletir', icone: 'chat-left-dots' },
     sabia: { titulo: 'Você sabia?', icone: 'question-circle-fill' },
+    importante: { titulo: 'Importante', icone: 'exclamation-triangle-fill' },
   };
 
   definir('curso-caixa', class extends Componente {

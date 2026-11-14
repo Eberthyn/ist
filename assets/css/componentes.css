@@ -1223,6 +1223,35 @@ curso-audiodescricao {
   min-height: 10rem;
 }
 
+/* Etapa com imagem larga: imagem em cima, texto embaixo */
+.passo--empilhado {
+  flex-direction: column;
+  text-align: center;
+}
+
+.passo--empilhado .passo__imagem {
+  width: min(100%, 18rem);
+}
+
+/* Etapa só de texto (ex.: Observações) */
+.passo--texto,
+.carrossel .passo--texto {
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.passo__subtitulo {
+  margin: 0.75rem 0 0 !important;
+  font-weight: 700;
+  color: var(--cor-rosa);
+}
+
+.passo--texto ul {
+  margin: 0.25rem 0 0;
+  padding-left: 1.1rem;
+}
+
 .passo__imagem {
   flex: 0 0 auto;
   width: 6rem;
